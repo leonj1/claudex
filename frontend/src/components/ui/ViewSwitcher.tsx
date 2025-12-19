@@ -4,6 +4,7 @@ import { cn } from '@/utils/cn';
 import type { ViewType } from '@/types/ui.types';
 import { LAYOUT_CLASSES } from '@/config/constants';
 import { useIsMobile } from '@/hooks';
+import { Tooltip } from './Tooltip';
 
 function VSCodeIcon({ className }: { className?: string; strokeWidth?: number }) {
   return (
@@ -45,21 +46,21 @@ export function ActivityBar() {
       )}
     >
       {visibleButtons.map(({ view, icon: Icon, label }) => (
-        <button
-          key={view}
-          onClick={() => setCurrentView(view)}
-          className={cn(
-            'group relative flex h-12 items-center justify-center border-l-2 transition-all duration-200',
-            currentView === view
-              ? 'border-brand-600 bg-surface text-brand-600 dark:border-brand-400 dark:bg-surface-dark dark:text-brand-400'
-              : 'border-transparent text-text-tertiary hover:bg-surface-hover hover:text-text-primary dark:text-text-dark-tertiary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary',
-          )}
-          aria-label={`Switch to ${label.toLowerCase()} view`}
-          aria-pressed={currentView === view}
-          title={label}
-        >
-          <Icon className="h-4 w-4" strokeWidth={2} />
-        </button>
+        <Tooltip key={view} content={label} position="right">
+          <button
+            onClick={() => setCurrentView(view)}
+            className={cn(
+              'flex h-12 w-full items-center justify-center border-l-2 transition-all duration-200',
+              currentView === view
+                ? 'border-brand-600 bg-surface text-brand-600 dark:border-brand-400 dark:bg-surface-dark dark:text-brand-400'
+                : 'border-transparent text-text-tertiary hover:bg-surface-hover hover:text-text-primary dark:text-text-dark-tertiary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary',
+            )}
+            aria-label={`Switch to ${label.toLowerCase()} view`}
+            aria-pressed={currentView === view}
+          >
+            <Icon className="h-5 w-5" strokeWidth={2} />
+          </button>
+        </Tooltip>
       ))}
     </div>
   );
