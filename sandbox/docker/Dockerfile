@@ -32,8 +32,15 @@ RUN apt-get update && apt-get install -y \
     && curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN curl -fsSL https://get.docker.com | sh
+
+RUN mv /usr/bin/docker /usr/bin/docker.real && \
+    printf '#!/bin/bash\nif ! pgrep -x dockerd > /dev/null; then\n    sudo dockerd > /tmp/dockerd.log 2>&1 &\n    for i in {1..30}; do\n        if docker.real info > /dev/null 2>&1; then break; fi\n        sleep 0.5\n    done\nfi\nexec docker.real "$@"\n' > /usr/bin/docker && \
+    chmod +x /usr/bin/docker
+
 RUN useradd -m -s /bin/bash -u 1000 user && \
     echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    usermod -aG docker user && \
     chown -R user:user /home/user
 
 COPY permission_server.py /usr/local/bin/permission_server.py
