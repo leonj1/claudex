@@ -68,7 +68,7 @@ export const McpSettingsTab: React.FC<McpSettingsTabProps> = ({
         <>
           <div className="mb-1 flex flex-wrap items-center gap-2">
             <Plug className="h-4 w-4 flex-shrink-0 text-brand-600 dark:text-brand-400" />
-            <h3 className="min-w-0 max-w-full truncate text-sm font-medium text-text-primary dark:text-text-dark-primary sm:max-w-[200px]">
+            <h3 className="min-w-0 max-w-full truncate text-sm font-medium text-text-primary dark:text-text-dark-primary sm:max-w-[250px]">
               {mcp.name}
             </h3>
             <span

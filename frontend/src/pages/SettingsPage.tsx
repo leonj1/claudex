@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Settings as SettingsIcon, AlertCircle, FileText, FileArchive } from 'lucide-react';
+import { cn } from '@/utils/cn';
 import { useNavigate } from 'react-router-dom';
 import type { UserSettings, UserSettingsUpdate, SandboxProvider } from '@/types';
 import {
@@ -465,7 +466,10 @@ const SettingsPage: React.FC = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   variant="unstyled"
-                  className={`${tabButtonClasses(activeTab === tab.id)} mr-4 shrink-0 whitespace-nowrap last:mr-0 sm:mr-6`}
+                  className={cn(
+                    tabButtonClasses(activeTab === tab.id),
+                    'mr-4 shrink-0 whitespace-nowrap last:mr-0 sm:mr-6',
+                  )}
                   role="tab"
                   aria-selected={activeTab === tab.id}
                   aria-controls={`${tab.id}-panel`}
