@@ -78,11 +78,6 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
     }
   }, [isMobile]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleClick = useCallback(() => {
-    handleCursorChange();
-    scrollIntoViewOnMobile();
-  }, [handleCursorChange, scrollIntoViewOnMobile]);
-
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setMessage(e.target.value);
@@ -98,7 +93,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       onChange={handleChange}
       onKeyDown={onKeyDown}
       onKeyUp={handleCursorChange}
-      onClick={handleClick}
+      onClick={handleCursorChange}
       onSelect={handleCursorChange}
       onFocus={scrollIntoViewOnMobile}
       placeholder={placeholder}
