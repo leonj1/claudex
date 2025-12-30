@@ -109,7 +109,7 @@ class MarketplaceService:
                             ),
                         )
                         msg += f" Resets in ~{minutes_until_reset} min."
-                    except (ValueError, TypeError):
+                    except (ValueError, TypeError, OverflowError):
                         pass
                 raise MarketplaceException(
                     msg,

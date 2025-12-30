@@ -9,8 +9,7 @@ from app.core.deps import (
     get_command_service,
     get_db,
     get_marketplace_service,
-    get_marketplace_service_with_token,
-    get_plugin_installer_service_with_token,
+    get_plugin_installer_service,
     get_skill_service,
     get_user_service,
 )
@@ -68,7 +67,7 @@ async def get_catalog(
 async def get_plugin_details(
     plugin_name: str,
     current_user: User = Depends(get_current_user),
-    marketplace_service: MarketplaceService = Depends(get_marketplace_service_with_token),
+    marketplace_service: MarketplaceService = Depends(get_marketplace_service),
 ) -> PluginDetails:
     try:
         details = await marketplace_service.get_plugin_details(plugin_name)
@@ -82,10 +81,8 @@ async def install_plugin_components(
     request: InstallComponentRequest,
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
-    marketplace_service: MarketplaceService = Depends(get_marketplace_service_with_token),
-    installer_service: PluginInstallerService = Depends(
-        get_plugin_installer_service_with_token
-    ),
+    marketplace_service: MarketplaceService = Depends(get_marketplace_service),
+    installer_service: PluginInstallerService = Depends(get_plugin_installer_service),
     user_service: UserService = Depends(get_user_service),
 ) -> InstallResponse:
     # 3-phase install to minimize DB lock time:

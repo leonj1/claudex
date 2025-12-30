@@ -1,5 +1,6 @@
 import io
 import logging
+import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Literal, cast
@@ -280,12 +281,13 @@ class PluginInstallerService:
 
         env_vars: dict[str, str] = {}
         headers = config.get("headers", {})
-        for _, header_value in headers.items():
-            if "${" in header_value and "}" in header_value:
-                start = header_value.index("${") + 2
-                end = header_value.index("}")
-                env_var_name = header_value[start:end]
-                env_vars[env_var_name] = ""
+        for header_value in headers.values():
+            if not isinstance(header_value, str):
+                continue
+            for match in re.finditer(r"\$\{([^}]+)\}", header_value):
+                env_var_name = match.group(1)
+                if env_var_name:
+                    env_vars[env_var_name] = ""
 
         return {
             "name": name,
