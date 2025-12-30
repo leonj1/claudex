@@ -43,7 +43,7 @@ const GrepToolInner: React.FC<{ tool: ToolAggregate }> = ({ tool }) => {
           case 'completed':
             return `Searched: "${pattern}" (${modeLabel})`;
           case 'failed':
-            return `Search failed: "${pattern}"`;
+            return `Failed to search: "${pattern}" (${modeLabel})`;
           default:
             return `Searching: "${pattern}" (${modeLabel})`;
         }

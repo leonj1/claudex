@@ -36,7 +36,9 @@ const BashToolInner: React.FC<{ tool: ToolAggregate }> = ({ tool }) => {
       icon={<Terminal className="h-3.5 w-3.5 text-text-secondary dark:text-text-dark-tertiary" />}
       status={tool.status}
       title={(status) => {
-        if (description) return description;
+        if (description) {
+          return status === 'failed' ? `Failed: ${description}` : description;
+        }
         if (!command) return status === 'completed' ? 'Ran command' : 'Run command';
         switch (status) {
           case 'completed':

@@ -27,7 +27,7 @@ const WebFetchToolInner: React.FC<{ tool: ToolAggregate }> = ({ tool }) => {
   const url = input?.url ?? '';
   const prompt = input?.prompt ?? '';
 
-  const domain = extractDomain(url);
+  const domain = extractDomain(url) || 'content';
   const result = formatResult(tool.result);
   const hasExpandableContent = url.length > 0 || (result.length > 0 && tool.status === 'completed');
 
