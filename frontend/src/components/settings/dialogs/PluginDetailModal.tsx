@@ -277,7 +277,7 @@ export const PluginDetailModal: React.FC<PluginDetailModalProps> = ({
                         isSelectedForUninstall
                           ? 'border-error-500 bg-error-50 dark:border-error-400 dark:bg-error-900/20'
                           : isInstalled
-                            ? 'border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/20'
+                            ? 'border-success-200 bg-success-50 dark:border-success-800 dark:bg-success-900/20'
                             : isSelected
                               ? 'border-brand-500 bg-brand-50 dark:border-brand-400 dark:bg-brand-900/20'
                               : 'border-border hover:border-brand-300 dark:border-border-dark dark:hover:border-brand-600'
@@ -289,7 +289,7 @@ export const PluginDetailModal: React.FC<PluginDetailModalProps> = ({
                             isSelectedForUninstall
                               ? 'text-error-600 dark:text-error-400'
                               : isInstalled
-                                ? 'text-green-600 dark:text-green-400'
+                                ? 'text-success-600 dark:text-success-400'
                                 : 'text-text-tertiary dark:text-text-dark-tertiary'
                           }`}
                         />
@@ -307,14 +307,14 @@ export const PluginDetailModal: React.FC<PluginDetailModalProps> = ({
                           type="checkbox"
                           checked={isSelectedForUninstall}
                           onChange={() => toggleUninstall(componentId)}
-                          className="h-4 w-4 rounded border-gray-300 text-error-600 focus:ring-error-500"
+                          className="h-4 w-4 rounded border-border text-error-600 focus:ring-error-500 dark:border-border-dark"
                         />
                       ) : (
                         <input
                           type="checkbox"
                           checked={isSelected}
                           onChange={() => toggleComponent(componentId)}
-                          className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+                          className="h-4 w-4 rounded border-border text-brand-600 focus:ring-brand-500 dark:border-border-dark"
                         />
                       )}
                     </label>

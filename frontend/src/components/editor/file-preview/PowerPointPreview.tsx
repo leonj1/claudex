@@ -184,7 +184,7 @@ export const PowerPointPreview = memo(function PowerPointPreview({
       <div className="flex flex-1 flex-col overflow-hidden">
         <div className="flex-1 overflow-auto p-8">
           <div
-            className={`mx-auto max-w-4xl rounded-lg bg-surface p-12 shadow-lg dark:bg-surface-dark-secondary ${isFullscreen ? 'min-h-full' : 'min-h-96'}`}
+            className={`mx-auto max-w-4xl rounded-lg bg-surface p-12 shadow-lg dark:bg-surface-dark ${isFullscreen ? 'min-h-full' : 'min-h-96'}`}
           >
             {currentSlideData && (
               <div className="space-y-4">

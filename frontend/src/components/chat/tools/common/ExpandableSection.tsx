@@ -16,7 +16,7 @@ interface ExpandableSectionProps {
 const baseButtonClass = `flex items-center gap-1.5 px-2 py-1 text-xs font-medium text-text-secondary dark:text-text-dark-secondary
   hover:text-text-primary dark:hover:text-text-dark-primary transition-colors
   bg-surface-tertiary/50 dark:bg-surface-dark-tertiary/30 rounded-md w-full text-left
-  hover:bg-surface-tertiary dark:hover:bg-surface-dark-tertiary/50`;
+  hover:bg-surface-hover dark:hover:bg-surface-dark-hover`;
 
 const baseContentClass = `mt-1 rounded-md border border-border/50 dark:border-border-dark/50
   bg-surface-tertiary/30 dark:bg-surface-dark-tertiary/20 overflow-hidden`;

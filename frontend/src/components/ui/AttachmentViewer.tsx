@@ -67,7 +67,7 @@ const getIconConfig = (fileType: string, filename?: string): IconConfig => {
   if (fileType === 'pdf') {
     return {
       icon: FileText,
-      color: 'text-red-500 dark:text-red-400',
+      color: 'text-error-500 dark:text-error-400',
       label: 'PDF',
     };
   }
@@ -75,14 +75,14 @@ const getIconConfig = (fileType: string, filename?: string): IconConfig => {
   if (fileType === 'xlsx') {
     return {
       icon: FileSpreadsheet,
-      color: 'text-green-500 dark:text-green-400',
+      color: 'text-success-600 dark:text-success-400',
       label: getFileExtension(filename) || 'XLSX',
     };
   }
 
   return {
     icon: FileText,
-    color: 'text-gray-500 dark:text-gray-400',
+    color: 'text-text-tertiary dark:text-text-dark-tertiary',
     label: 'FILE',
   };
 };

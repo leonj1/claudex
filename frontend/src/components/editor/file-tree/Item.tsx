@@ -41,7 +41,7 @@ export const Item = memo(function Item({ item, level, searchQuery = '', matchedP
         className={cn(
           'flex w-full items-center gap-1 px-1.5 py-1 text-left',
           'rounded-md transition-colors duration-150',
-          'hover:bg-surface-secondary dark:hover:bg-white/5',
+          'hover:bg-surface-hover dark:hover:bg-surface-dark-hover',
           isSelected && 'bg-brand-50 text-brand-900 dark:bg-brand-500/10 dark:text-brand-100',
           !isSelected && 'text-text-secondary dark:text-text-dark-secondary',
         )}

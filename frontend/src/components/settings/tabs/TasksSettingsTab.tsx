@@ -328,7 +328,7 @@ export const TasksSettingsTab: React.FC<TasksSettingsTabProps> = ({ onAddTask, o
                         variant="ghost"
                         size="icon"
                         onClick={() => handleDeleteRequest(task)}
-                        className="h-8 w-8 text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-400/10"
+                        className="h-8 w-8 text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-400/20"
                         title="Delete task"
                         aria-label="Delete task"
                         disabled={deletingTaskId === task.id}

@@ -19,7 +19,7 @@ export interface HeaderProps {
 const dropdownButtonClasses = cn(
   'w-full px-2.5 py-1.5 text-left text-xs',
   'text-text-primary dark:text-text-dark-secondary',
-  'hover:bg-surface-secondary dark:hover:bg-surface-dark-tertiary',
+  'hover:bg-surface-hover dark:hover:bg-surface-dark-hover',
   'rounded-xl transition-all duration-200',
   'flex items-center gap-2 group',
 );
@@ -221,7 +221,7 @@ function UserMenu({
         <div
           className={cn(
             'absolute right-0 mt-1.5 w-56',
-            'bg-surface dark:bg-surface-dark-secondary',
+            'bg-surface dark:bg-surface-dark',
             'border border-border dark:border-border-dark',
             'overflow-hidden rounded-2xl shadow-strong',
             'animate-in fade-in slide-in-from-top-1 duration-200',

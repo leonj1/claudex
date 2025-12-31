@@ -131,8 +131,8 @@ export const XlsxPreview = memo(function XlsxPreview({
                 variant="unstyled"
                 className={`cursor-pointer rounded px-3 py-1 text-sm ${
                   activeSheet === index
-                    ? 'bg-surface text-text-primary shadow-sm dark:bg-surface-dark-tertiary dark:text-text-dark-primary'
-                    : 'text-text-secondary hover:bg-surface/50 dark:text-text-dark-secondary dark:hover:bg-surface-dark-tertiary/50'
+                    ? 'bg-surface text-text-primary shadow-sm dark:bg-surface-dark dark:text-text-dark-primary'
+                    : 'text-text-secondary hover:bg-surface-hover/50 dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover/50'
                 }`}
               >
                 {sheet.name}

@@ -14,7 +14,7 @@ function SelectItemInner({ isSelected, onSelect, className, children }: SelectIt
 
   const backgroundClasses = isSelected
     ? 'bg-brand-500/10 dark:bg-brand-500/15'
-    : 'hover:bg-surface-tertiary/50 dark:hover:bg-white/5';
+    : 'hover:bg-surface-hover/50 dark:hover:bg-surface-dark-hover/50';
 
   return (
     <Button

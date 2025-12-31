@@ -13,7 +13,7 @@
 html,
 body,
 #root {
-  @apply bg-white text-neutral-900 dark:bg-surface-dark dark:text-white;
+  @apply bg-surface-secondary text-neutral-900 dark:bg-surface-dark-secondary dark:text-white;
 }
 
 #root {

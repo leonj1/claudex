@@ -169,7 +169,7 @@ export function TimePicker({
               <button
                 type="button"
                 onClick={handlePeriodToggle}
-                className="rounded bg-white/20 px-1.5 py-0.5 text-xs font-medium text-white transition-colors hover:bg-white/30"
+                className="rounded bg-white/20 px-1.5 py-0.5 text-xs font-medium text-white transition-colors hover:bg-white/40"
               >
                 {selectedPeriod}
               </button>
@@ -189,7 +189,7 @@ export function TimePicker({
                       selectedMinute === qt.minute &&
                       selectedPeriod === qt.period
                       ? 'bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-300'
-                      : 'bg-surface-secondary text-text-secondary hover:bg-surface-tertiary dark:bg-surface-dark-tertiary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover',
+                      : 'bg-surface-secondary text-text-secondary hover:bg-surface-hover dark:bg-surface-dark-secondary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover',
                   )}
                 >
                   {qt.label}
@@ -244,7 +244,7 @@ export function TimePicker({
             </div>
 
             <div className="mt-2.5 flex justify-center">
-              <div className="inline-flex rounded-md bg-surface-secondary p-0.5 dark:bg-surface-dark-tertiary">
+              <div className="inline-flex rounded-md bg-surface-secondary p-0.5 dark:bg-surface-dark-secondary">
                 {(['AM', 'PM'] as const).map((period) => (
                   <button
                     key={period}
@@ -256,7 +256,7 @@ export function TimePicker({
                     className={cn(
                       'rounded px-3 py-1 text-xs font-medium transition-all',
                       selectedPeriod === period
-                        ? 'bg-surface-tertiary text-text-primary shadow-sm dark:bg-surface-dark dark:text-text-dark-primary'
+                        ? 'bg-surface-tertiary text-text-primary shadow-sm dark:bg-surface-dark-tertiary dark:text-text-dark-primary'
                         : 'text-text-tertiary hover:text-text-primary dark:text-text-dark-tertiary dark:hover:text-text-dark-primary',
                     )}
                   >

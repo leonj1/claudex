@@ -131,7 +131,7 @@ export const ListManagementTab = <T,>({
                       onClick={() => setPendingDeleteIndex(index)}
                       variant="ghost"
                       size="icon"
-                      className="h-7 w-7 text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-400/10"
+                      className="h-7 w-7 text-error-600 hover:bg-error-50 dark:text-error-400 dark:hover:bg-error-400/20"
                       aria-label="Delete item"
                       disabled={deletingIndex === index}
                     >

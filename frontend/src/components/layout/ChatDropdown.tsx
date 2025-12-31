@@ -24,7 +24,7 @@ export const ChatDropdown = memo(
         ref={ref}
         className={cn(
           'fixed w-32',
-          'bg-surface dark:bg-surface-dark-secondary',
+          'bg-surface dark:bg-surface-dark',
           'border border-border dark:border-border-dark',
           'z-50 overflow-hidden rounded-lg shadow-medium',
         )}
@@ -39,7 +39,7 @@ export const ChatDropdown = memo(
           className={cn(
             'w-full px-3 py-2 text-left text-xs',
             'text-text-primary dark:text-text-dark-primary',
-            'hover:bg-surface-secondary dark:hover:bg-surface-dark-tertiary',
+            'hover:bg-surface-hover dark:hover:bg-surface-dark-hover',
             'flex items-center gap-2 transition-colors',
           )}
         >
@@ -61,7 +61,7 @@ export const ChatDropdown = memo(
           className={cn(
             'w-full px-3 py-2 text-left text-xs',
             'text-text-primary dark:text-text-dark-primary',
-            'hover:bg-surface-secondary dark:hover:bg-surface-dark-tertiary',
+            'hover:bg-surface-hover dark:hover:bg-surface-dark-hover',
             'flex items-center gap-2 transition-colors',
           )}
         >

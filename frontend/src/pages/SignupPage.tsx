@@ -30,20 +30,22 @@ const SignupPageLayout = memo(function SignupPageLayout({
 }: SignupPageLayoutProps) {
   return (
     <Layout isAuthPage={true}>
-      <div className="flex h-full flex-col bg-gray-50 dark:bg-black">
+      <div className="flex h-full flex-col bg-surface-secondary dark:bg-surface-dark-secondary">
         <div className="flex flex-1 flex-col items-center justify-center p-4">
           <div className="relative z-10 w-full max-w-sm space-y-6">
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-2 text-center">
-                <h2 className="animate-fadeIn text-3xl font-bold text-gray-900 dark:text-white">
+                <h2 className="animate-fadeIn text-3xl font-bold text-text-primary dark:text-text-dark-primary">
                   {title}
                 </h2>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{subtitle}</p>
+                <p className="mt-2 text-sm text-text-secondary dark:text-text-dark-secondary">
+                  {subtitle}
+                </p>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative rounded-xl border border-gray-200 bg-white p-6 shadow-2xl backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-900/50">
+              <div className="relative rounded-xl border border-border bg-surface-tertiary p-6 shadow-2xl backdrop-blur-xl dark:border-border-dark dark:bg-surface-dark-tertiary">
                 {children}
               </div>
             </div>
@@ -199,15 +201,15 @@ export function SignupPage() {
     <SignupPageLayout title={title} subtitle={subtitle}>
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="animate-fadeIn rounded-xl border border-red-500/20 bg-red-500/10 p-4 backdrop-blur-sm">
-            <p className="text-sm font-medium text-red-400">{error}</p>
+          <div className="animate-fadeIn rounded-xl border border-error-500/20 bg-error-500/10 p-4 backdrop-blur-sm">
+            <p className="text-sm font-medium text-error-400">{error}</p>
           </div>
         )}
 
         <div className="space-y-4">
           {fieldConfigs.map(({ name, label, placeholder, type, icon: Icon, helperText }) => (
             <div key={name} className="space-y-2">
-              <Label className="text-sm text-gray-700 dark:text-gray-300">
+              <Label className="text-sm text-text-secondary dark:text-text-dark-secondary">
                 <Icon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 {label}
               </Label>

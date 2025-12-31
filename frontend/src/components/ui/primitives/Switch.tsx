@@ -53,7 +53,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(function Switch
         sizeClasses[size],
         checked
           ? 'border-transparent bg-brand-500'
-          : 'border-border bg-border/70 dark:border-border-dark dark:bg-surface-dark-tertiary',
+          : 'border-border bg-surface-tertiary dark:border-border-dark dark:bg-surface-dark-tertiary',
         className,
       )}
       disabled={disabled}
@@ -71,7 +71,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(function Switch
         <span
           aria-hidden="true"
           className={cn(
-            'rounded-full bg-white shadow-sm transition-all duration-200',
+            'rounded-full bg-surface-tertiary shadow-sm transition-all duration-200 dark:bg-surface-dark-tertiary',
             knobSize[size],
             checked ? 'scale-100' : 'scale-75',
           )}

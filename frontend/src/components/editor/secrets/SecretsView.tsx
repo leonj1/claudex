@@ -18,11 +18,11 @@ export interface SecretsViewProps {
 
 const baseButtonClasses = 'flex items-center gap-1 px-2.5 py-1 text-xs rounded-md';
 const disabledButtonClasses =
-  'opacity-50 cursor-not-allowed bg-surface-secondary dark:bg-surface-dark-tertiary text-text-quaternary';
+  'opacity-50 cursor-not-allowed bg-surface-secondary dark:bg-surface-dark-secondary text-text-quaternary';
 const enabledButtonClasses =
-  'bg-surface-secondary dark:bg-surface-dark-tertiary hover:bg-surface-tertiary dark:hover:bg-surface-dark-secondary text-text-secondary dark:text-text-dark-secondary';
+  'bg-surface-secondary dark:bg-surface-dark-secondary hover:bg-surface-hover dark:hover:bg-surface-dark-hover text-text-secondary dark:text-text-dark-secondary';
 const inputClasses =
-  'w-full px-2 py-1 text-xs bg-white dark:bg-surface-dark-tertiary border border-border dark:border-border-dark rounded-md';
+  'w-full px-2 py-1 text-xs bg-surface-tertiary dark:bg-surface-dark-tertiary border border-border dark:border-border-dark rounded-md';
 
 export const SecretsView = memo(function SecretsView({ sandboxId }: SecretsViewProps) {
   const [secrets, setSecrets] = useState<Secret[]>([]);
@@ -286,7 +286,7 @@ export const SecretsView = memo(function SecretsView({ sandboxId }: SecretsViewP
                       <Button
                         onClick={() => handleRemoveSecret(index)}
                         variant="unstyled"
-                        className="rounded-md p-1 text-text-quaternary transition-colors hover:bg-surface-secondary hover:text-error-600 dark:hover:bg-surface-dark-tertiary dark:hover:text-error-400"
+                        className="rounded-md p-1 text-text-quaternary transition-colors hover:bg-surface-hover hover:text-error-600 dark:hover:bg-surface-dark-hover dark:hover:text-error-400"
                       >
                         <Trash2 className="h-3.5 w-3.5" />
                       </Button>

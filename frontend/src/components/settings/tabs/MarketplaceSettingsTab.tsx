@@ -114,7 +114,7 @@ export const MarketplaceSettingsTab: React.FC = () => {
             <button
               onClick={() => refreshMutation.mutate()}
               disabled={refreshMutation.isPending}
-              className="inline-flex items-center gap-1.5 rounded-md bg-error-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-error-700 disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 rounded-md bg-error-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-error-700 disabled:opacity-50 dark:hover:bg-error-500"
             >
               <RefreshCw
                 className={`h-3.5 w-3.5 ${refreshMutation.isPending ? 'animate-spin' : ''}`}

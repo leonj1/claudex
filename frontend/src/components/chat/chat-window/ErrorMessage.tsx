@@ -40,7 +40,7 @@ export function ErrorMessage({ error, onDismiss }: ErrorMessageProps) {
                 <Button
                   onClick={onDismiss}
                   variant="unstyled"
-                  className="inline-flex rounded-md bg-error-50 p-1.5 text-error-500 transition-colors duration-200 hover:bg-error-100 focus:outline-none focus:ring-2 focus:ring-error-600 focus:ring-offset-2 dark:bg-error-900/20 dark:text-error-400 dark:hover:bg-error-900/30 dark:focus:ring-offset-gray-900"
+                  className="inline-flex rounded-md bg-error-50 p-1.5 text-error-500 transition-colors duration-200 hover:bg-error-100 focus:outline-none focus:ring-2 focus:ring-error-600 focus:ring-offset-2 dark:bg-error-900/20 dark:text-error-400 dark:hover:bg-error-900/30 dark:focus:ring-offset-surface-dark"
                 >
                   <span className="sr-only">Dismiss</span>
                   <svg

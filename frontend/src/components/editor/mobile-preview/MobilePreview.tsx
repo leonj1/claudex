@@ -74,7 +74,7 @@ export const MobilePreview = ({ sandboxId }: MobilePreviewProps) => {
             <Select
               value={selectedPort?.port?.toString() ?? ''}
               onChange={(e) => setSelectedPortId(Number(e.target.value))}
-              className="h-6 border-border-secondary bg-surface text-xs dark:border-border-dark-secondary dark:bg-surface-dark-secondary"
+              className="h-6 border-border-secondary bg-surface text-xs dark:border-border-dark-secondary dark:bg-surface-dark"
             >
               {ports.map((p) => (
                 <option key={p.port} value={p.port}>
@@ -95,10 +95,10 @@ export const MobilePreview = ({ sandboxId }: MobilePreviewProps) => {
         )}
 
         <div className="relative">
-          <div className="relative h-[700px] w-[340px] rounded-5xl border-[14px] border-surface-tertiary bg-surface-tertiary shadow-strong dark:border-surface-dark-secondary dark:bg-surface-dark-secondary">
+          <div className="relative h-[700px] w-[340px] rounded-5xl border-[14px] border-surface-tertiary bg-surface-tertiary shadow-strong dark:border-surface-dark-tertiary dark:bg-surface-dark-tertiary">
             <div className="absolute left-1/2 top-0 z-10 h-8 w-32 -translate-x-1/2 rounded-b-3xl bg-surface dark:bg-surface-dark"></div>
 
-            <div className="relative h-full w-full overflow-hidden rounded-4xl bg-white dark:bg-black">
+            <div className="relative h-full w-full overflow-hidden rounded-4xl bg-surface-secondary dark:bg-surface-dark-secondary">
               <iframe
                 key={`${previewUrl}-${iframeKey}`}
                 src={previewUrl}
@@ -118,7 +118,7 @@ export const MobilePreview = ({ sandboxId }: MobilePreviewProps) => {
           </h3>
 
           <div className="mb-8 flex justify-center">
-            <div className="inline-block rounded-2xl bg-white p-5 shadow-sm dark:shadow-none">
+            <div className="inline-block rounded-2xl bg-surface-tertiary p-5 shadow-sm dark:bg-surface-dark-tertiary dark:shadow-none">
               {isLoadingQr ? (
                 <div className="flex h-72 w-72 items-center justify-center">
                   <Spinner size="lg" className="text-brand-600" />

@@ -50,7 +50,7 @@ export function ToolPermissionModal({
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
       <div className="flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-2xl dark:border-border-dark dark:bg-surface-dark">
         <div className="flex items-center gap-2.5 border-b border-border px-4 py-3 dark:border-border-dark">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-yellow-500">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-warning-500">
             <ShieldAlert className="h-4 w-4 text-white" />
           </div>
           <div className="min-w-0 flex-1">

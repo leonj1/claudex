@@ -30,7 +30,7 @@ const MessageSkeleton = memo(function MessageSkeleton({
           <div className="mb-1 flex items-center justify-between">
             <div className="h-3 w-32 animate-pulse rounded bg-text-quaternary dark:bg-text-dark-quaternary" />
             {isBot && (
-              <div className="h-4 w-20 animate-pulse rounded bg-border dark:bg-surface-dark-tertiary" />
+              <div className="h-4 w-20 animate-pulse rounded bg-surface-tertiary dark:bg-surface-dark-tertiary" />
             )}
           </div>
 
@@ -42,10 +42,10 @@ const MessageSkeleton = memo(function MessageSkeleton({
 
           {isBot && (
             <div className="mt-4 flex items-center gap-2">
-              <div className="h-8 w-20 animate-pulse rounded-xl bg-border dark:bg-surface-dark-tertiary" />
+              <div className="h-8 w-20 animate-pulse rounded-xl bg-surface-tertiary dark:bg-surface-dark-tertiary" />
               <div className="h-4 w-px bg-border dark:bg-border-dark" />
-              <div className="h-8 w-24 animate-pulse rounded-xl bg-border dark:bg-surface-dark-tertiary" />
-              <div className="h-8 w-28 animate-pulse rounded-xl bg-border dark:bg-surface-dark-tertiary" />
+              <div className="h-8 w-24 animate-pulse rounded-xl bg-surface-tertiary dark:bg-surface-dark-tertiary" />
+              <div className="h-8 w-28 animate-pulse rounded-xl bg-surface-tertiary dark:bg-surface-dark-tertiary" />
             </div>
           )}
         </div>

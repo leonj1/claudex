@@ -93,7 +93,7 @@ function QuestionCard({
                     className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-2 transition-all ${
                       selected
                         ? 'border-brand-500 bg-brand-500 dark:border-brand-400 dark:bg-brand-400'
-                        : 'border-gray-300 group-hover:border-gray-400 dark:border-gray-600 dark:group-hover:border-gray-500'
+                        : 'border-border group-hover:border-border-secondary dark:border-border-dark dark:group-hover:border-border-dark-secondary'
                     }`}
                   >
                     {selected && <Check className="h-2.5 w-2.5 text-white" strokeWidth={3} />}

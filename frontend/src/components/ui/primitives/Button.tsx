@@ -31,7 +31,7 @@ const variantClasses: Record<Exclude<ButtonVariant, 'unstyled'>, string> = {
   ghost:
     'text-text-secondary hover:bg-surface-hover dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover focus-visible:ring-brand-500/30',
   destructive: 'bg-error-500 text-white hover:bg-error-600 focus-visible:ring-error-500/60',
-  link: 'text-brand-600 underline underline-offset-4 hover:text-brand-700 focus-visible:ring-0 focus-visible:ring-offset-0 px-0 shadow-none',
+  link: 'text-brand-600 underline underline-offset-4 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 focus-visible:ring-0 focus-visible:ring-offset-0 px-0 shadow-none',
   gradient:
     'relative overflow-hidden bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-lg hover:from-brand-700 hover:to-brand-800 focus-visible:ring-brand-500/60',
 };

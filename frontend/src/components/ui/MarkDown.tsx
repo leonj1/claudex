@@ -55,7 +55,7 @@ function MarkDownInner({ content, className = '' }: { content: string; className
         </div>
       ),
       thead: ({ children, ...props }: CommonProps) => (
-        <thead className="bg-surface-secondary dark:bg-surface-dark" {...props}>
+        <thead className="bg-surface-secondary dark:bg-surface-dark-secondary" {...props}>
           {children}
         </thead>
       ),
@@ -69,7 +69,7 @@ function MarkDownInner({ content, className = '' }: { content: string; className
       ),
       tr: ({ children, ...props }: CommonProps) => (
         <tr
-          className="transition-colors hover:bg-surface-secondary dark:hover:bg-surface-dark-secondary/50"
+          className="transition-colors hover:bg-surface-hover dark:hover:bg-surface-dark-hover"
           {...props}
         >
           {children}
@@ -167,7 +167,7 @@ function MarkDownInner({ content, className = '' }: { content: string; className
         if (!match) {
           return (
             <div className="my-4">
-              <pre className="overflow-x-auto rounded-lg border border-border bg-surface-secondary p-2 dark:border-border-dark dark:bg-surface-dark">
+              <pre className="overflow-x-auto rounded-lg border border-border bg-surface-secondary p-2 dark:border-border-dark dark:bg-surface-dark-secondary">
                 <code
                   className="font-mono text-xs text-text-primary dark:text-text-dark-primary"
                   {...props}
@@ -189,19 +189,19 @@ function MarkDownInner({ content, className = '' }: { content: string; className
         return (
           <div className="group relative my-4">
             <div className="absolute right-0 top-0 z-10 flex overflow-hidden rounded-bl">
-              <div className="border-b border-l border-border bg-surface-secondary/50 px-1.5 py-0.5 text-xs font-medium text-text-tertiary dark:border-border-dark dark:bg-surface-dark dark:text-text-dark-tertiary">
+              <div className="border-b border-l border-border bg-surface-secondary/50 px-1.5 py-0.5 text-xs font-medium text-text-tertiary dark:border-border-dark dark:bg-surface-dark-secondary dark:text-text-dark-tertiary">
                 {language}
               </div>
               <Button
                 onClick={() => handleCopyCode(codeContent)}
                 variant="unstyled"
-                className="border-b border-l border-border bg-surface-secondary/50 px-1.5 py-0.5 text-xs font-medium text-text-tertiary hover:text-text-primary dark:border-border-dark dark:bg-surface-dark dark:text-text-dark-tertiary dark:hover:text-text-dark-primary"
+                className="border-b border-l border-border bg-surface-secondary/50 px-1.5 py-0.5 text-xs font-medium text-text-tertiary hover:text-text-primary dark:border-border-dark dark:bg-surface-dark-secondary dark:text-text-dark-tertiary dark:hover:text-text-dark-primary"
                 aria-label="Copy code"
               >
                 {isCopied ? 'Copied!' : 'Copy'}
               </Button>
             </div>
-            <pre className="overflow-x-auto rounded-lg border border-border bg-surface-secondary p-2 pt-5 dark:border-border-dark dark:bg-surface-dark">
+            <pre className="overflow-x-auto rounded-lg border border-border bg-surface-secondary p-2 pt-5 dark:border-border-dark dark:bg-surface-dark-secondary">
               <code
                 className={`${className || ''} font-mono text-xs text-text-primary dark:text-text-dark-primary`}
                 {...props}

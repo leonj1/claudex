@@ -83,13 +83,13 @@ export const FileUploadDialog = memo(function FileUploadDialog({
           ) : (
             <div className="space-y-3">
               <div className="flex justify-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark-secondary">
                   <Image className="h-5 w-5 text-text-tertiary dark:text-text-dark-tertiary" />
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark-secondary">
                   <FileText className="h-5 w-5 text-text-tertiary dark:text-text-dark-tertiary" />
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-secondary dark:bg-surface-dark-secondary">
                   <FileSpreadsheet className="h-5 w-5 text-text-tertiary dark:text-text-dark-tertiary" />
                 </div>
               </div>

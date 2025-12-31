@@ -20,7 +20,7 @@ const DeviceButton = ({ active, onClick, title, children }: DeviceButtonProps) =
     onClick={onClick}
     variant="unstyled"
     className={`rounded p-1 ${
-      active ? 'bg-white shadow-sm dark:bg-surface-dark-tertiary' : 'text-text-tertiary'
+      active ? 'bg-surface-tertiary shadow-sm dark:bg-surface-dark-tertiary' : 'text-text-tertiary'
     }`}
     title={title}
   >
@@ -154,7 +154,7 @@ export const Panel = memo(function Panel({
                 const port = ports.find((p) => p.port === Number(e.target.value));
                 if (port && onPortChange) onPortChange(port);
               }}
-              className="h-7 border-border-secondary bg-surface-secondary text-xs dark:border-border-dark-secondary dark:bg-surface-dark-tertiary"
+              className="h-7 border-border-secondary bg-surface-secondary text-xs dark:border-border-dark-secondary dark:bg-surface-dark-secondary"
             >
               {ports.map((port) => (
                 <option key={port.port} value={port.port}>
@@ -181,7 +181,7 @@ export const Panel = memo(function Panel({
           <iframe
             key={iframeKey}
             src={previewUrl}
-            className="h-full w-full border-0 bg-white"
+            className="h-full w-full border-0 bg-surface-secondary dark:bg-surface-dark-secondary"
             title="Code Preview"
             sandbox="allow-scripts allow-same-origin allow-forms"
             onLoad={handlePreviewLoad}

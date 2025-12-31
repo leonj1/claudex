@@ -79,7 +79,7 @@ export function Mermaid({ content }: MermaidProps) {
         <Button
           onClick={() => setShowPreview((v) => !v)}
           variant="unstyled"
-          className="flex items-center gap-1.5 rounded-md border border-border bg-surface-secondary px-2 py-1 text-xs text-text-secondary transition-colors hover:bg-surface-tertiary dark:border-white/10 dark:bg-white/5 dark:text-text-dark-secondary dark:hover:bg-white/10"
+          className="flex items-center gap-1.5 rounded-md border border-border bg-surface-secondary px-2 py-1 text-xs text-text-secondary transition-colors hover:bg-surface-hover dark:border-border-dark dark:bg-surface-dark-secondary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover"
           disabled={state.status === 'loading'}
         >
           {showPreview ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
@@ -88,7 +88,7 @@ export function Mermaid({ content }: MermaidProps) {
       </div>
 
       {!showPreview && (
-        <pre className="overflow-x-auto rounded-xl border border-border bg-surface-secondary p-4 dark:border-border-dark dark:bg-surface-dark">
+        <pre className="overflow-x-auto rounded-xl border border-border bg-surface-secondary p-4 dark:border-border-dark dark:bg-surface-dark-secondary">
           <code className="font-mono text-xs text-text-primary dark:text-text-dark-primary">
             {content}
           </code>

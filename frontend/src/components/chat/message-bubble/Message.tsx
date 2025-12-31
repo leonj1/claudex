@@ -81,7 +81,7 @@ export const Message = memo(function Message({
   }, [modelId, models]);
 
   return (
-    <div className="group rounded-lg px-4 py-2 transition-all hover:bg-surface-secondary/50 dark:hover:bg-surface-dark-hover/50 sm:rounded-2xl sm:px-6 sm:py-3">
+    <div className="group rounded-lg px-4 py-2 transition-all hover:bg-surface-hover/50 dark:hover:bg-surface-dark-hover/50 sm:rounded-2xl sm:px-6 sm:py-3">
       <div className="space-y-1">
         <div className="flex items-center gap-3 sm:gap-4">
           <div className="flex-shrink-0">{isBot ? <BotAvatar /> : <UserAvatar />}</div>
@@ -132,7 +132,7 @@ export const Message = memo(function Message({
                   className={`relative min-h-[44px] min-w-[44px] overflow-hidden rounded-xl p-2.5 transition-all duration-200 sm:min-h-0 sm:min-w-0 sm:p-2 ${
                     copiedMessageId === id
                       ? 'bg-success-100 text-success-600 dark:bg-success-500/10 dark:text-success-400'
-                      : 'text-text-secondary hover:bg-surface-secondary hover:text-text-primary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary'
+                      : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary'
                   }`}
                 >
                   <div className="relative z-10 flex items-center gap-1.5">
@@ -158,7 +158,7 @@ export const Message = memo(function Message({
                     className={`relative rounded-xl p-2.5 transition-all duration-200 sm:p-2 ${
                       isRestoring
                         ? 'cursor-not-allowed opacity-50'
-                        : 'text-text-secondary hover:bg-surface-secondary hover:text-text-primary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary'
+                        : 'text-text-secondary hover:bg-surface-hover hover:text-text-primary dark:text-text-dark-secondary dark:hover:bg-surface-dark-hover dark:hover:text-text-dark-primary'
                     }`}
                     title="Restore to this message"
                   >

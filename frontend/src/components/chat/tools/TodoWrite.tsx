@@ -77,7 +77,7 @@ export const TodoWrite: React.FC<TodoWriteProps> = ({ tool }) => {
             {todos.map((todo, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 rounded-md py-1 transition-colors hover:bg-surface-secondary dark:hover:bg-surface-dark-secondary/30"
+                className="flex items-center gap-2 rounded-md py-1 transition-colors hover:bg-surface-hover dark:hover:bg-surface-dark-hover"
               >
                 <div className="flex-shrink-0">{getTodoStatusIcon(todo.status)}</div>
                 <div className="min-w-0 flex-1">

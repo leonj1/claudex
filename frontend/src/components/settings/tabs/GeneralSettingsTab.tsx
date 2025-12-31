@@ -170,7 +170,7 @@ export const GeneralSettingsTab: React.FC<GeneralSettingsTabProps> = ({
               onClick={onDeleteAllChats}
               variant="outline"
               size="sm"
-              className="w-full border-error-200 text-error-600 hover:bg-error-50 dark:border-error-800 dark:text-error-400 dark:hover:bg-error-400/10 sm:w-auto"
+              className="w-full border-error-200 text-error-600 hover:bg-error-50 dark:border-error-800 dark:text-error-400 dark:hover:bg-error-400/20 sm:w-auto"
             >
               Delete All
             </Button>

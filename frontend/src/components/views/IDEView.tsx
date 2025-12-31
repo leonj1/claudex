@@ -99,7 +99,7 @@ export const IDEView = memo(function IDEView({ sandboxId, isActive = false }: ID
   }
 
   return (
-    <div className="flex h-full w-full flex-col bg-white dark:bg-surface-dark">
+    <div className="flex h-full w-full flex-col bg-surface-secondary dark:bg-surface-dark-secondary">
       <div className="flex items-center border-b border-border px-3 py-1.5 dark:border-white/10">
         <div className="flex flex-1 items-center gap-3">
           <Button
