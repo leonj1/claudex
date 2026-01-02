@@ -1,8 +1,6 @@
 import logging
 import re
-import uuid
 from collections.abc import AsyncIterator, Callable
-from pathlib import Path
 from types import TracebackType
 from typing import Any, Literal, Self
 
@@ -14,8 +12,6 @@ from claude_agent_sdk import (
     TextBlock,
     UserMessage,
 )
-from sqlalchemy import select
-
 from app.core.config import get_settings
 from app.core.security import create_chat_scoped_token
 from app.db.session import SessionLocal
@@ -36,9 +32,6 @@ SDKPermissionMode = Literal["default", "acceptEdits", "plan", "bypassPermissions
 
 settings = get_settings()
 logger = logging.getLogger(__name__)
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-PYTHONPATH_VALUE = str(PROJECT_ROOT)
-
 
 THINKING_MODE_TOKENS = {
     "low": 4000,
@@ -184,8 +177,6 @@ class ClaudeAgentService:
             session_factory=self.session_factory
         ).get_user_settings(user.id)
 
-        self.current_session_id = session_id
-        self.current_chat_id = chat_id
         self._total_cost_usd = 0.0
 
         sandbox_provider = chat.sandbox_provider or user_settings.sandbox_provider
@@ -582,20 +573,6 @@ class ClaudeAgentService:
         prompt_message: dict[str, Any],
     ) -> AsyncIterator[dict[str, Any]]:
         yield prompt_message
-
-    async def _update_chat_token_usage(self, chat_id: str, token_usage: int) -> None:
-        try:
-            async with self.session_factory() as db:
-                chat_uuid = uuid.UUID(chat_id)
-                result = await db.execute(select(Chat).filter(Chat.id == chat_uuid))
-                chat = result.scalar_one_or_none()
-
-                if chat:
-                    chat.context_token_usage = token_usage
-                    db.add(chat)
-                    await db.commit()
-        except Exception as e:
-            logger.error("Failed to update chat token usage: %s", e)
 
     async def get_context_token_usage(
         self,
