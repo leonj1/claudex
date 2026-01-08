@@ -154,7 +154,7 @@ class SandboxService:
 
     async def get_browser_status(self, sandbox_id: str) -> dict[str, bool]:
         result = await self.execute_command(
-            sandbox_id, "pgrep -f chromium > /dev/null && echo 'running' || echo 'stopped'"
+            sandbox_id, "pgrep -f 'chromium --no-sandbox' > /dev/null && echo 'running' || echo 'stopped'"
         )
         running = "running" in result
         return {"running": running}
